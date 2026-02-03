@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course - Uniq English</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <span class="logo-text">Uniq English</span>
+            </a>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar" id="sidebarAvatar">
+                <span id="sidebarInitial">A</span>
+            </div>
+            <div class="user-info">
+                <p class="user-name" id="sidebarName">Admin</p>
+                <p class="user-role">Administrator</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="nav-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="admin-add-course.html" class="nav-item active">
+                <i class="fas fa-plus-circle"></i>
+                <span>Add Course</span>
+            </a>
+            <a href="admin-courses.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>Manage Courses</span>
+            </a>
+            <a href="admin-students.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Enrolled Students</span>
+            </a>
+            <a href="admin-payments.html" class="nav-item">
+                <i class="fas fa-credit-card"></i>
+                <span>Payment History</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="nav-item logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Add New Course</h1>
+                <p>Create a new course with videos and details</p>
+            </div>
+        </div>
+
+        <form id="addCourseForm" class="course-form">
+            <!-- Tabs -->
+            <div class="form-tabs">
+                <button type="button" class="tab-btn active" data-tab="basic">Basic Info</button>
+                <button type="button" class="tab-btn" data-tab="videos">Videos (<span id="videoCount">0</span>)</button>
+                <button type="button" class="tab-btn" data-tab="pricing">Pricing</button>
+            </div>
+
+            <!-- Basic Info Tab -->
+            <div class="tab-content active" id="basic">
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Course Title *</label>
+                        <input type="text" id="courseTitle" placeholder="Enter course title" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Description *</label>
+                        <textarea id="courseDescription" rows="4" placeholder="Enter course description" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Instructor Name *</label>
+                        <input type="text" id="instructorName" placeholder="Enter instructor name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Course Duration</label>
+                        <input type="text" id="courseDuration" placeholder="e.g., 4 weeks">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="courseCategory">
+                            <option value="">Select category</option>
+                            <option value="Grammar">Grammar</option>
+                            <option value="Speaking">Speaking</option>
+                            <option value="Writing">Writing</option>
+                            <option value="Reading">Reading</option>
+                            <option value="Listening">Listening</option>
+                            <option value="Business">Business</option>
+                            <option value="Exam Prep">Exam Prep</option>
+                            <option value="Vocabulary">Vocabulary</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Level</label>
+                        <select id="courseLevel">
+                            <option value="">Select level</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Course Thumbnail</label>
+                        <div class="thumbnail-upload">
+                            <div class="upload-preview" id="thumbnailPreview">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Upload image or paste URL</span>
+                            </div>
+                            <button type="button" class="thumbnail-delete-btn" id="thumbnailDeleteBtn" style="display: none;">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                            <input type="file" id="thumbnailInput" accept="image/*" hidden>
+                            <div class="upload-info">
+                                <p>Recommended size: 800x600px</p>
+                                <p>Max file size: 5MB</p>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label>Or paste image URL</label>
+                            <div class="input-group">
+                                <input type="url" id="thumbnailUrl" placeholder="https://example.com/image.jpg">
+                                <button type="button" class="btn btn-primary" id="loadThumbnailBtn">
+                                    <i class="fas fa-link"></i> Load
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videos Tab -->
+            <div class="tab-content" id="videos">
+                <div class="video-form">
+                    <h3>Add Videos</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Video Title</label>
+                            <input type="text" id="videoTitle" placeholder="Enter video title">
+                        </div>
+                        <div class="form-group flex-2">
+                            <label>Video URL (YouTube or Drive)</label>
+                            <div class="input-group">
+                                <input type="text" id="videoUrl" placeholder="https://youtube.com/watch?v=... or https://drive.google.com/file/d/...">
+                                <input type="text" id="videoDuration" placeholder="Duration" class="small">
+                                <button type="button" class="btn btn-primary" id="addVideoBtn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="help-text" style="font-size: 0.75rem; color: #64748b; margin-top: 0.5rem;">
+                                <strong>Google Drive:</strong> Use /file/d/ link format. Share the file publicly to enable preview.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-list-container">
+                    <div class="video-list" id="videoList">
+                        <!-- Videos will be added here -->
+                    </div>
+                    <div class="empty-state" id="emptyVideos" style="display: none;">
+                        <i class="fas fa-video"></i>
+                        <p>No videos added yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Tab -->
+            <div class="tab-content" id="pricing">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Price Type</label>
+                        <select id="priceType">
+                            <option value="free">Free</option>
+                            <option value="paid">Paid</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="priceGroup" style="display: none;">
+                        <label>Price ($)</label>
+                        <input type="number" id="coursePrice" placeholder="Enter price" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+                <a href="admin-courses.html" class="btn btn-outline">Cancel</a>
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <span class="spinner" style="display: none;"></span>
+                    <span class="btn-text">Create Course</span>
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Video Preview Modal -->
+    <div class="modal" id="videoPreviewModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeVideoPreview">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 id="previewVideoTitle"></h3>
+            <div class="video-container">
+                <iframe id="previewVideoFrame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Firebase and Data Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/firebase-data.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

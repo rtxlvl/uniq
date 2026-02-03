@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses - Uniq English</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <span class="logo-text">Uniq English</span>
+            </a>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar" id="sidebarAvatar">
+                <span id="sidebarInitial">U</span>
+            </div>
+            <div class="user-info">
+                <p class="user-name" id="sidebarName">User</p>
+                <p class="user-role">Student</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="user-dashboard.html" class="nav-item active">
+                <i class="fas fa-book"></i>
+                <span>My Courses</span>
+            </a>
+            <a href="user-payments.html" class="nav-item">
+                <i class="fas fa-credit-card"></i>
+                <span>Payment History</span>
+            </a>
+            <a href="user-profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Edit Profile</span>
+            </a>
+            <a href="user-password.html" class="nav-item">
+                <i class="fas fa-lock"></i>
+                <span>Change Password</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="nav-item logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>My Courses</h1>
+                <p>Continue your learning journey</p>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="all">All (<span id="allCount">0</span>)</button>
+            <button class="tab-btn" data-tab="in-progress">In Progress (<span id="progressCount">0</span>)</button>
+            <button class="tab-btn" data-tab="completed">Completed (<span id="completedCount">0</span>)</button>
+            <button class="tab-btn" data-tab="not-started">Not Started (<span id="notStartedCount">0</span>)</button>
+        </div>
+
+        <!-- Course Grid -->
+        <div class="courses-grid" id="myCoursesGrid">
+            <!-- Will be populated by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyCourses" style="display: none;">
+            <i class="fas fa-book-open"></i>
+            <h3>No courses found</h3>
+            <p id="emptyMessage">You haven't enrolled in any courses yet.</p>
+            <a href="index.html#courses" class="btn btn-primary">Browse Courses</a>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Firebase and Data Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/firebase-data.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/user.js"></script>
+</body>
+
+</html>

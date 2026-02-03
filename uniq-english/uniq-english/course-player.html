@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Player - Uniq English</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <span class="logo-text">Uniq English</span>
+            </a>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar" id="sidebarAvatar">
+                <span id="sidebarInitial">U</span>
+            </div>
+            <div class="user-info">
+                <p class="user-name" id="sidebarName">User</p>
+                <p class="user-role">Student</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="user-dashboard.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>My Courses</span>
+            </a>
+            <a href="user-payments.html" class="nav-item">
+                <i class="fas fa-credit-card"></i>
+                <span>Payment History</span>
+            </a>
+            <a href="user-profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Edit Profile</span>
+            </a>
+            <a href="user-password.html" class="nav-item">
+                <i class="fas fa-lock"></i>
+                <span>Change Password</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="nav-item logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Course Header -->
+        <div class="course-player-header">
+            <a href="user-dashboard.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to My Courses
+            </a>
+            <h1 id="courseTitle">Loading...</h1>
+            <div class="course-progress-header">
+                <div class="progress-track">
+                    <div class="progress-fill" id="headerProgressBar" style="width: 0%"></div>
+                </div>
+                <span id="headerProgressText">0% Complete</span>
+            </div>
+        </div>
+
+        <!-- Player Layout -->
+        <div class="player-layout">
+            <!-- Video Section -->
+            <div class="video-section">
+                <div class="video-container player-container">
+                    <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"></iframe>
+                </div>
+
+                <div class="video-info">
+                    <h2 id="videoTitle">Select a video to start learning</h2>
+                    <div class="video-meta">
+                        <span id="videoDuration"><i class="fas fa-clock"></i> --:--</span>
+                        <span id="videoNumber"><i class="fas fa-list-ol"></i> Video 0 of 0</span>
+                    </div>
+                    <p id="videoDescription">Choose a lesson from the sidebar to begin your learning journey.</p>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="video-navigation">
+                    <button class="btn btn-outline" id="prevVideoBtn" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <button class="btn btn-primary" id="markCompleteBtn">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <button class="btn btn-outline" id="nextVideoBtn" disabled>
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar Playlist -->
+            <div class="playlist-sidebar">
+                <div class="playlist-header">
+                    <h3><i class="fas fa-list"></i> Course Content</h3>
+                    <span id="playlistProgress">0/0 videos</span>
+                </div>
+                <div class="playlist" id="videoPlaylist">
+                    <!-- Videos will be populated by JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Completion Modal -->
+    <div class="modal" id="completionModal">
+        <div class="modal-content modal-xs text-center">
+            <div class="success-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2>Congratulations!</h2>
+            <p>You have completed all videos in this course!</p>
+            <p style="margin-top: 10px; color: var(--gray-600);">Download your certificate to mark the course as 100% complete.</p>
+            <div class="form-actions">
+                <button class="btn btn-primary" id="downloadCertBtn">
+                    <i class="fas fa-download"></i> Download Certificate
+                </button>
+                <a href="user-dashboard.html" class="btn btn-outline">Go to My Courses</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Firebase and Data Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/firebase-data.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/player.js"></script>
+</body>
+
+</html>

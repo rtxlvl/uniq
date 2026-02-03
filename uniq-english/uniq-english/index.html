@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniq English - Master English with Expert Guidance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <span class="logo-text">Uniq English</span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="#courses" class="nav-link">Courses</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+
+            <div class="auth-buttons" id="authButtons">
+                <a href="login.html" class="btn btn-ghost">Login</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+
+            <div class="user-menu" id="userMenu" style="display: none;">
+                <div class="user-avatar" id="userAvatar">
+                    <span id="userInitial">U</span>
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <a href="user-dashboard.html" id="dashboardLink">Dashboard</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <div class="mobile-auth" id="mobileAuth">
+            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+        <div class="mobile-user-menu" id="mobileUserMenu" style="display: none;">
+            <a href="user-dashboard.html" id="mobileDashboardLink" class="btn btn-outline">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="#" id="mobileLogoutBtn" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">
+                        <span class="pulse"></span> New courses available
+                    </div>
+                    <h1>Master English with <span class="gradient-text">Expert Guidance</span></h1>
+                    <p>Join thousands of students achieving fluency through our comprehensive online courses. Learn at your own pace with professional instructors.</p>
+                    <div class="hero-buttons">
+                        <a href="#courses" class="btn btn-white">
+                            Explore Courses
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <span class="stat-value">10,000+</span>
+                                <span class="stat-label">Students</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <span class="stat-value">500+</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <span class="stat-value">95%</span>
+                                <span class="stat-label">Success Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop" alt="Students learning">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <strong>Certificate</strong>
+                            <span>Upon completion</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-video"></i>
+                        <div>
+                            <strong>Live Classes</strong>
+                            <span>Interactive sessions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Courses</h2>
+                <p>Choose from a wide range of English courses designed for all levels. Start your learning journey today.</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="course-search-wrapper">
+                <div class="course-search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="courseSearchInput" placeholder="Search courses by title or instructor...">
+                    <button class="clear-search" id="clearSearch" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Tabs (shown when search is active) -->
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="beginner">Beginner</button>
+                <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+                <button class="filter-btn" data-filter="advanced">Advanced</button>
+                <button class="filter-btn" data-filter="free">Free</button>
+            </div>
+
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Courses will be loaded by JavaScript -->
+            </div>
+
+            <!-- View More Button -->
+            <div class="view-more-container" id="viewMoreContainer" style="display: none;">
+                <button class="btn btn-primary btn-lg" id="viewMoreBtn">
+                    <i class="fas fa-chevron-down"></i> View More Courses
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Student Gallery</h2>
+                <p>Moments from our learning community. See how our students are achieving their goals.</p>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <img src="" alt="Lightbox image" id="lightboxImg">
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-counter" id="lightboxCounter">1 / 8</div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop" alt="Our team">
+                    <div class="experience-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>10+</strong>
+                            <span>Years of Excellence</span>
+                        </div>
+                    </div>
+                    <div class="decoration-circle circle-1"></div>
+                    <div class="decoration-circle circle-2"></div>
+                </div>
+                <div class="about-content">
+                    <h2>About Uniq English</h2>
+                    <p>We are dedicated to helping students worldwide achieve English fluency through innovative online learning. Our expert instructors and comprehensive curriculum ensure your success in mastering the English language.</p>
+
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Expert native-speaking instructors</li>
+                        <li><i class="fas fa-check-circle"></i> Interactive live classes</li>
+                        <li><i class="fas fa-check-circle"></i> Comprehensive study materials</li>
+                        <li><i class="fas fa-check-circle"></i> Personalized learning paths</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 community support</li>
+                        <li><i class="fas fa-check-circle"></i> Certificate upon completion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number" data-target="10000">0</div>
+                    <span class="stat-suffix">+</span>
+                    <p>Students enrolled</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-book"></i>
+                    <div class="stat-number" data-target="500">0</div>
+                    <span class="stat-suffix">+</span>
+                    <p>Courses available</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <div class="stat-number" data-target="50">0</div>
+                    <span class="stat-suffix">+</span>
+                    <p>Expert instructors</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-smile"></i>
+                    <div class="stat-number" data-target="95">0</div>
+                    <span class="stat-suffix">%</span>
+                    <p>Student satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <span class="logo-text">Uniq English</span>
+                    </a>
+                    <p>Empowering students worldwide to achieve English fluency through innovative online learning.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@uniqenglish.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Learning Street, New York, NY 10001</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Uniq English. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Course Preview Modal -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <img src="" alt="Course" id="modalImage">
+                <div class="modal-badges" id="modalBadges"></div>
+                <h2 id="modalTitle"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="curriculum">Curriculum</button>
+                    <button class="tab-btn" data-tab="instructor">Instructor</button>
+                </div>
+                <div class="tab-content active" id="overview">
+                    <div class="course-stats">
+                        <div><i class="fas fa-star"></i> <span id="modalRating"></span></div>
+                        <div><i class="fas fa-users"></i> <span id="modalStudents"></span></div>
+                        <div><i class="fas fa-clock"></i> <span id="modalDuration"></span></div>
+                    </div>
+                    <p id="modalDescription"></p>
+                    <h4>What you will learn</h4>
+                    <ul class="learn-list">
+                        <li><i class="fas fa-check-circle"></i> Master core concepts</li>
+                        <li><i class="fas fa-check-circle"></i> Practice with real examples</li>
+                        <li><i class="fas fa-check-circle"></i> Get certified</li>
+                        <li><i class="fas fa-check-circle"></i> Lifetime access</li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="curriculum">
+                    <p id="modalVideoCount"></p>
+                    <div class="video-list" id="videoList"></div>
+                </div>
+                <div class="tab-content" id="instructor">
+                    <div class="instructor-info">
+                        <div class="instructor-avatar" id="instructorAvatar"></div>
+                        <div>
+                            <h4 id="modalInstructor"></h4>
+                            <p>Expert English Instructor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-lg" id="enrollBtn">
+                        <i class="fas fa-play"></i>
+                        <span id="enrollBtnText">Enroll Now</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content modal-sm">
+            <button class="modal-close" id="paymentModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="payment-header">
+                <h3><i class="fas fa-credit-card"></i> Complete Your Payment</h3>
+            </div>
+            <div class="payment-summary">
+                <p>Course</p>
+                <h4 id="paymentCourseTitle"></h4>
+                <div class="payment-amount">
+                    <span>Total Amount</span>
+                    <span class="amount" id="paymentAmount"></span>
+                </div>
+            </div>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label>Cardholder Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <div class="input-with-icon">
+                        <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" id="cardNumber" required>
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="text" placeholder="MM/YY" maxlength="5" id="expiryDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <div class="input-with-icon">
+                            <input type="password" placeholder="123" maxlength="4" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-security">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Your payment is secured with 256-bit SSL encryption</span>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancelPayment">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="payBtn">
+                        <span class="spinner" style="display: none;"></span>
+                        <span class="btn-text">Pay Now</span>
+                    </button>
+                </div>
+            </form>
+            <p class="payment-note">This is a demo payment interface. No real charges will be made.</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content modal-xs text-center">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Enrollment Successful!</h2>
+            <p id="successMessage"></p>
+            <div class="form-actions">
+                <button class="btn btn-outline" id="successClose">Close</button>
+                <a href="user-dashboard.html" class="btn btn-primary">Go to Course</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Firebase and Data Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/firebase-data.js"></script>
+
+    <!-- Keep original data.js for utility functions -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

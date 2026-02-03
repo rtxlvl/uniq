@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Uniq English</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <span class="logo-text">Uniq English</span>
+            </a>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar" id="sidebarAvatar">
+                <span id="sidebarInitial">U</span>
+            </div>
+            <div class="user-info">
+                <p class="user-name" id="sidebarName">User</p>
+                <p class="user-role">Student</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="user-dashboard.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>My Courses</span>
+            </a>
+            <a href="user-payments.html" class="nav-item">
+                <i class="fas fa-credit-card"></i>
+                <span>Payment History</span>
+            </a>
+            <a href="user-profile.html" class="nav-item active">
+                <i class="fas fa-user"></i>
+                <span>Edit Profile</span>
+            </a>
+            <a href="user-password.html" class="nav-item">
+                <i class="fas fa-lock"></i>
+                <span>Change Password</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="nav-item logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Edit Profile</h1>
+                <p>Manage your personal information</p>
+            </div>
+        </div>
+
+        <div class="profile-form-container">
+            <form id="profileForm" class="profile-form">
+                <!-- Avatar -->
+                <div class="avatar-section">
+                    <div class="avatar-upload">
+                        <div class="avatar-preview" id="avatarPreview">
+                            <span id="avatarInitial">U</span>
+                        </div>
+                    </div>
+                    <div class="form-group" style="max-width: 500px; margin: 1rem auto 0;">
+                        <label>Profile Picture URL</label>
+                        <div class="input-with-icon">
+                            <input type="url" id="avatarUrlInput" placeholder="https://example.com/image.jpg">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <span class="form-hint">Enter an image URL for your profile picture</span>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="profileName" placeholder="Enter your full name">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <div class="input-with-icon">
+                            <input type="email" id="profileEmail" disabled>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span class="form-hint">Email cannot be changed</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <div class="input-with-icon">
+                            <input type="tel" id="profilePhone" placeholder="+1 (555) 123-4567">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Bio</label>
+                        <div class="input-with-icon textarea">
+                            <textarea id="profileBio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="saveProfileBtn">
+                        <span class="spinner" style="display: none;"></span>
+                        <span class="btn-text">Save Changes</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Firebase and Data Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/firebase-data.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/user.js"></script>
+</body>
+
+</html>

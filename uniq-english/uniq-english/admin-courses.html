@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Courses - Uniq English</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <span class="logo-text">Uniq English</span>
+            </a>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar" id="sidebarAvatar">
+                <span id="sidebarInitial">A</span>
+            </div>
+            <div class="user-info">
+                <p class="user-name" id="sidebarName">Admin</p>
+                <p class="user-role">Administrator</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="nav-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="admin-add-course.html" class="nav-item">
+                <i class="fas fa-plus-circle"></i>
+                <span>Add Course</span>
+            </a>
+            <a href="admin-courses.html" class="nav-item active">
+                <i class="fas fa-book"></i>
+                <span>Manage Courses</span>
+            </a>
+            <a href="admin-students.html" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Enrolled Students</span>
+            </a>
+            <a href="admin-payments.html" class="nav-item">
+                <i class="fas fa-credit-card"></i>
+                <span>Payment History</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="nav-item logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Manage Courses</h1>
+                <p>View, edit, and manage all courses</p>
+            </div>
+            <a href="admin-add-course.html" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add New Course
+            </a>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-bar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search courses...">
+            </div>
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="Grammar">Grammar</option>
+                <option value="Speaking">Speaking</option>
+                <option value="Writing">Writing</option>
+                <option value="Reading">Reading</option>
+                <option value="Listening">Listening</option>
+                <option value="Business">Business</option>
+                <option value="Exam Prep">Exam Prep</option>
+                <option value="Vocabulary">Vocabulary</option>
+            </select>
+            <select id="levelFilter">
+                <option value="all">All Levels</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+            <select id="priceFilter">
+                <option value="all">All Prices</option>
+                <option value="free">Free</option>
+                <option value="paid">Paid</option>
+            </select>
+            <button class="btn btn-outline" id="clearFilters">
+                <i class="fas fa-filter"></i> Clear
+            </button>
+        </div>
+
+        <!-- Courses Table -->
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Instructor</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Students</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="coursesTableBody">
+                    <!-- Will be populated by JS -->
+                </tbody>
+            </table>
+            <div class="empty-state" id="emptyCourses" style="display: none;">
+                <i class="fas fa-book"></i>
+                <p>No courses found matching your filters.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content modal-xs">
+            <h3>Delete Course</h3>
+            <p>Are you sure you want to delete "<span id="deleteCourseName"></span>"? This action cannot be undone.</p>
+            <div class="form-actions">
+                <button class="btn btn-outline" id="cancelDelete">Cancel</button>
+                <button class="btn btn-danger" id="confirmDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Firebase and Data Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/firebase-data.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

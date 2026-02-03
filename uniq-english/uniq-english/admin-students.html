@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrolled Students - Uniq English</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <span class="logo-text">Uniq English</span>
+            </a>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar" id="sidebarAvatar">
+                <span id="sidebarInitial">A</span>
+            </div>
+            <div class="user-info">
+                <p class="user-name" id="sidebarName">Admin</p>
+                <p class="user-role">Administrator</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="nav-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="admin-add-course.html" class="nav-item">
+                <i class="fas fa-plus-circle"></i>
+                <span>Add Course</span>
+            </a>
+            <a href="admin-courses.html" class="nav-item">
+                <i class="fas fa-book"></i>
+                <span>Manage Courses</span>
+            </a>
+            <a href="admin-students.html" class="nav-item active">
+                <i class="fas fa-users"></i>
+                <span>Enrolled Students</span>
+            </a>
+            <a href="admin-payments.html" class="nav-item">
+                <i class="fas fa-credit-card"></i>
+                <span>Payment History</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="nav-item logout-btn" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-sidebar-btn" id="mobileSidebarBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Enrolled Students</h1>
+                <p>View and manage student enrollments</p>
+            </div>
+            <button class="btn btn-outline" id="exportBtn">
+                <i class="fas fa-download"></i> Export Data
+            </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-bar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search students...">
+            </div>
+            <select id="courseFilter">
+                <option value="all">All Courses</option>
+                <!-- Will be populated by JS -->
+            </select>
+            <select id="progressFilter">
+                <option value="all">All Progress</option>
+                <option value="completed">Completed</option>
+                <option value="in-progress">In Progress</option>
+                <option value="not-started">Not Started</option>
+            </select>
+            <button class="btn btn-outline" id="clearFilters">
+                <i class="fas fa-filter"></i> Clear
+            </button>
+        </div>
+
+        <!-- Students Table -->
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Course</th>
+                        <th>Enrollment Date</th>
+                        <th>Progress</th>
+                        <th>Payment</th>
+                    </tr>
+                </thead>
+                <tbody id="studentsTableBody">
+                    <!-- Will be populated by JS -->
+                </tbody>
+            </table>
+            <div class="empty-state" id="emptyStudents" style="display: none;">
+                <i class="fas fa-users"></i>
+                <p>No enrollments found matching your filters.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Firebase and Data Scripts -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/firebase-data.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
